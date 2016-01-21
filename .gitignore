@@ -1,0 +1,8 @@
+.DS_Store
+dist
+build
+node_modules
+bower_components
+**.mo
+source/js/deps.js
+source/js/closure-library

@@ -1,0 +1,14 @@
+grow_version: ">=0.0.50"
+
+localization:
+  default_locale: en_us
+  locales:
+  - de_de
+  - en_us
+  - ja_jp
+
+static_dirs:
+- static_dir: /source/images/
+  serve_at: /static/images/
+- static_dir: /dist/
+  serve_at: /static/
