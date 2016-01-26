@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <title>{{_(doc.title)}}</title>
-<link rel="stylesheet" href="/static/css/main.min.css">
+<link rel="stylesheet" href="{{g.static('/dist/css/main.min.css').url.path}}">
 <link href="//fonts.googleapis.com/css?family=RobotoDraft:100,300,400,500,700" rel="stylesheet">
 <body>
   <header>
-    <img src="/static/images/grow.png">
+    <img src="{{g.static('/source/images/grow.png').url.path}}">
   </header>
   <main>
     {% block main %}{% endblock %}
