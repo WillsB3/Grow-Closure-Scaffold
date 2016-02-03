@@ -9,7 +9,7 @@ module.exports = function (gulp) {
   return function (callback) {
     var appJs = PATHS.JS_SOURCES;
     var thirdPartyJs = [
-      '!' + path.join(PATHS.SRC.JS, 'closure-library', '**', '*')
+      '!' + path.join(PATHS.SRC.JS, 'google-closure-library', '**', '*')
     ];
 
     gulp.src(appJs.concat(thirdPartyJs))

@@ -9,15 +9,15 @@ module.exports = function (gulp) {
   return function () {
     var appJs = PATHS.JS_SOURCES;
     var jsFiles = appJs.concat([
-      PATHS.BOWER + 'closure-library/**/*.js',
-      '!' + PATHS.BOWER + 'closure-library/**/*_test.js'
+      PATHS.NPM + 'google-closure-library/**/*.js',
+      '!' + PATHS.NPM + 'google-closure-library/**/*_test.js'
     ]);
 
     return gulp.src(jsFiles)
       .pipe(sort())
-      // .pipe(debug({'title': 'compile-js'}))
+      .pipe(debug({'title': 'compile-js'}))
       .pipe(closureCompiler({
-        compilerPath: path.join(PATHS.BOWER, 'closure-compiler', 'compiler.jar'),
+        compilerPath: path.join(PATHS.NPM, 'google-closure-compiler', 'compiler.jar'),
         compilerFlags: {
           'externs': [
             path.join(PATHS.SRC.JS, 'externs', 'modernizr.js')

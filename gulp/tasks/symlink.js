@@ -17,7 +17,7 @@ module.exports = function (gulp) {
 
       // Create symlink for closure library
       if (!fs.existsSync(__dirname + '/../../source/js/closure-library')) {
-        fs.symlinkSync(__dirname + '/../../bower_components/closure-library', __dirname + '/../../source/js/closure-library');
+        fs.symlinkSync(__dirname + '/../../node_modules/google-closure-library', __dirname + '/../../source/js/closure-library');
       }
     }
   };
