@@ -1,0 +1,8 @@
+{
+  "name": "scaffold-closure",
+  "private": true,
+  "dependencies": {
+    "closure-compiler": "http://dl.google.com/closure-compiler/compiler-latest.zip",
+    "closure-library": "git://github.com/google/closure-library.git"
+  }
+}
