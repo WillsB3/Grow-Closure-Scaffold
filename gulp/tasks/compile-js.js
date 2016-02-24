@@ -15,7 +15,7 @@ module.exports = function(gulp) {
 
     return gulp.src(jsFiles)
       .pipe(sort())
-      .pipe(debug({'title': 'compile-js'}))
+      // .pipe(debug({'title': 'compile-js'}))
       .pipe(closureCompiler({
         compilerPath: path.join(PATHS.NPM, 'google-closure-compiler', 'compiler.jar'),
         compilerFlags: {
