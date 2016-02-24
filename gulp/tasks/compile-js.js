@@ -5,8 +5,8 @@ var debug = require('gulp-debug');
 var sort = require('gulp-sort');
 var path = require('path');
 
-module.exports = function (gulp) {
-  return function () {
+module.exports = function(gulp) {
+  return function() {
     var appJs = PATHS.JS_SOURCES;
     var jsFiles = appJs.concat([
       PATHS.NPM + 'google-closure-library/**/*.js',

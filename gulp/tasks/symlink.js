@@ -2,10 +2,10 @@ var PATHS = require('../paths');
 
 var fs = require('fs');
 
-module.exports = function (gulp) {
+module.exports = function(gulp) {
   return {
-    dev: function () {
-      if (!fs.existsSync(PATHS.DIST.ROOT)){
+    dev: function() {
+      if (!fs.existsSync(PATHS.DIST.ROOT)) {
         fs.mkdirSync(PATHS.DIST.ROOT);
       }
 

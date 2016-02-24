@@ -8,8 +8,8 @@ var sass = require('gulp-sass');
 
 var onError = require('../utils/on-error');
 
-module.exports = function (gulp) {
-  return function (callback) {
+module.exports = function(gulp) {
+  return function(callback) {
     var sassOpts = {
       outputStyle: 'compressed'
     };
