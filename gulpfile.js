@@ -7,6 +7,7 @@ gulp.task('closure-deps', getTask('closure-deps'));
 gulp.task('compile-js', getTask('compile-js'));
 gulp.task('lint-js', getTask('lint-js'));
 gulp.task('lint-scss', getTask('lint-scss'));
+gulp.task('preview', getTask('preview'));
 gulp.task('sass', getTask('sass'));
 gulp.task('symlink:dev', getTask('symlink').dev);
 gulp.task('watch', getTask('watch'));

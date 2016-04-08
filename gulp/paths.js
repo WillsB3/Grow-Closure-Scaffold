@@ -1,5 +1,6 @@
 module.exports = PATHS = {
   BOWER: './bower_components/',
+  BUILD: './build',
   NPM: './node_modules/',
   DIST: {
     ROOT: './dist/',

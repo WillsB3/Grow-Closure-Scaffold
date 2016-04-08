@@ -9,8 +9,8 @@ module.exports = function(gulp) {
   return function() {
     var appJs = PATHS.JS_SOURCES;
     var jsFiles = appJs.concat([
-      PATHS.NPM + 'google-closure-library/**/*.js',
-      '!' + PATHS.NPM + 'google-closure-library/**/*_test.js'
+      PATHS.NPM + 'google-closure-library/closure/goog/**/*.js',
+      '!' + PATHS.NPM + 'google-closure-library/closure/goog/**/*_test.js'
     ]);
 
     return gulp.src(jsFiles)

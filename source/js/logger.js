@@ -26,8 +26,8 @@ scaffold.Logger.prototype.log = function(message, level) {
   if (window.console && window.console.log) {
     if (window.console[level]) {
       console[level](message);
-    } else {
-      console.log('message');
+    } else if (typeof(console.log) === 'function') {
+      console.log(message);
     }
   }
 };
