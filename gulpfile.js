@@ -1,17 +1,16 @@
 var gulp = require('gulp');
-var getTask = require('./gulp/utils/get-task');
 
 // Initialise gulp tasks.
-gulp.task('clean', getTask('clean'));
-gulp.task('closure-deps', getTask('closure-deps'));
-gulp.task('compile-js', getTask('compile-js'));
-gulp.task('lint-js', getTask('lint-js'));
-gulp.task('lint-scss', getTask('lint-scss'));
-gulp.task('preview', getTask('preview'));
-gulp.task('sass', getTask('sass'));
-gulp.task('symlink:dev', getTask('symlink').dev);
-gulp.task('watch', getTask('watch'));
+gulp.task('clean', require('./gulp/tasks/clean'));
+gulp.task('closure-deps', require('./gulp/tasks/closure-deps'));
+gulp.task('compile-js', require('./gulp/tasks/compile-js'));
+gulp.task('lint-js', require('./gulp/tasks/lint-js'));
+gulp.task('lint-scss', require('./gulp/tasks/lint-scss'));
+gulp.task('preview', require('./gulp/tasks/preview'));
+gulp.task('sass', require('./gulp/tasks/sass'));
+gulp.task('symlink:dev', require('./gulp/tasks/symlink').dev);
+gulp.task('watch', require('./gulp/tasks/watch'));
 
 // Main tasks
-gulp.task('build', getTask('build'));
-gulp.task('default', getTask('default'));
+gulp.task('build', require('./gulp/tasks/build'));
+gulp.task('default', require('./gulp/tasks/default'));
