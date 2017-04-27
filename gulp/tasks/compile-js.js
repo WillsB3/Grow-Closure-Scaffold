@@ -1,6 +1,6 @@
 var PATHS = require('../paths');
 
-var closureCompiler = require('gulp-closure-compiler');
+var closureCompiler = require('google-closure-compiler').gulp();
 var debug = require('gulp-debug');
 var sort = require('gulp-sort');
 var path = require('path');
@@ -17,19 +17,16 @@ module.exports = function(gulp) {
       .pipe(sort())
       // .pipe(debug({'title': 'compile-js'}))
       .pipe(closureCompiler({
-        compilerPath: path.join(PATHS.NPM, 'google-closure-compiler', 'compiler.jar'),
-        compilerFlags: {
-          'externs': [
-            path.join(PATHS.SRC.JS, 'externs', 'modernizr.js')
-          ],
-          'closure_entry_point': 'scaffold',
-          'compilation_level': 'ADVANCED_OPTIMIZATIONS',
-          'generate_exports': true,
-          'manage_closure_dependencies': true,
-          'only_closure_dependencies': true,
-          'output_wrapper': '(function(){%output%})();'
-        },
-        fileName: 'site.min.js'
+        'closure_entry_point': 'scaffold',
+        'compilation_level': 'ADVANCED_OPTIMIZATIONS',
+        'dependency_mode': 'STRICT',
+        'entry_point': 'goog:scaffold',
+        'externs': [
+          path.join(PATHS.SRC.JS, 'externs', 'modernizr.js')
+        ],
+        'generate_exports': true,
+        'js_output_file': 'site.min.js',
+        'output_wrapper': '(function(){%output%})();'
       }))
       .pipe(gulp.dest(PATHS.DIST.JS));
   };
