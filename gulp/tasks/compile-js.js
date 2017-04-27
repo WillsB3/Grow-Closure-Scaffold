@@ -17,7 +17,6 @@ module.exports = function(gulp) {
       .pipe(sort())
       // .pipe(debug({'title': 'compile-js'}))
       .pipe(closureCompiler({
-        'closure_entry_point': 'scaffold',
         'compilation_level': 'ADVANCED_OPTIMIZATIONS',
         'dependency_mode': 'STRICT',
         'entry_point': 'goog:scaffold',
