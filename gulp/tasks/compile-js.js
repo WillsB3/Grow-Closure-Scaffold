@@ -15,7 +15,7 @@ module.exports = function(gulp) {
 
     return gulp.src(jsFiles)
       .pipe(sort())
-      .pipe(debug({'title': 'compile-js'}))
+      // .pipe(debug({'title': 'compile-js'}))
       .pipe(closureCompiler({
         'compilation_level': 'SIMPLE',
         'create_source_map': 'example.map',
@@ -28,9 +28,6 @@ module.exports = function(gulp) {
         'js_output_file': 'site.min.js',
         'language_in': 'ECMASCRIPT6',
         'language_out': 'ECMASCRIPT3',
-        'module_resolution': 'NODE',
-        // output_wrapper: '(function(){%output%})();',
-        'process_common_js_modules': false,
         'warning_level': 'VERBOSE'
       }))
       .pipe(gulp.dest(PATHS.DIST.JS));
