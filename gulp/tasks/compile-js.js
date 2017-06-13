@@ -15,9 +15,10 @@ module.exports = function(gulp) {
 
     return gulp.src(jsFiles)
       .pipe(sort())
-      // .pipe(debug({'title': 'compile-js'}))
+      .pipe(debug({'title': 'compile-js'}))
       .pipe(closureCompiler({
-        'compilation_level': 'ADVANCED_OPTIMIZATIONS',
+        'compilation_level': 'SIMPLE',
+        'create_source_map': 'example.map',
         'dependency_mode': 'STRICT',
         'entry_point': 'goog:scaffold',
         'externs': [
@@ -25,7 +26,12 @@ module.exports = function(gulp) {
         ],
         'generate_exports': true,
         'js_output_file': 'site.min.js',
-        'output_wrapper': '(function(){%output%})();'
+        'language_in': 'ECMASCRIPT6',
+        'language_out': 'ECMASCRIPT3',
+        'module_resolution': 'NODE',
+        // output_wrapper: '(function(){%output%})();',
+        'process_common_js_modules': false,
+        'warning_level': 'VERBOSE'
       }))
       .pipe(gulp.dest(PATHS.DIST.JS));
   };
